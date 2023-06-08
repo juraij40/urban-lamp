@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Popup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            visibility: hidden;
+        }
+        
+        .popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .popup label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .popup input[type="text"],
+        .popup input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .popup button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .popup button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="togglePopup()">Open Login</button>
+
+    <div id="loginPopup" class="overlay">
+        <div class="popup">
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePopup() {
+            var popup = document.getElementById('loginPopup');
+            popup.style.visibility = popup.style.visibility === 'visible' ? 'hidden' : 'visible';
+        }
+    </script>
+</body>
+</html>
